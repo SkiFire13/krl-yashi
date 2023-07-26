@@ -51,24 +51,16 @@
   // TODO: Bound on m?
     
   - We can compute the pairs of crossing edges $(e_i, e_j), (e_h, e_k) ...$
+
+  - Goal: find a spanning tree without crossing edges
 ]
 
 #slide(title: "SAT formulation")[
-  - Variables $e_i$ for all $e_i$
+  - Variables $e_i$ for all edges $e_i$
 
   - True if and only if $e_i$ is selected in the solution
 
   - $not e_i or not e_j$ for all pair of crossing edges $(e_i, e_j)$
-]
-
-#slide(title: "Properties of the solution")[
-  - The game requires:
-
-    - all nodes to be connected
-
-    - no cycles to be present
-
-  - True if and only if the solution is a spanning tree
 ]
 
 #slide(title: "Properties of spanning trees")[
@@ -82,7 +74,7 @@
     - There are exactly $n - 1$ edges
 ]
 
-#slide(title: [ Requiring $n-1$ edges ])[
+#slide(title: [ Requiring exactly $n-1$ edges ])[
   - Every edge connects a child to a parent
 
   - Every node except the root has exactly one edge that connects it to its parent
@@ -91,8 +83,6 @@
 ]
 
 #slide(title: "SAT formulation")[
-  - Which endpoint is the child and which the parent?
-
   - Variables $c_(i j)$ for all $n_i$, $n_j$ connected by an edge
   // TODO: number of variables
 
@@ -140,9 +130,9 @@
 // ]
 
 #slide(title: "SAT Formulation")[
-  - variables $u_(i j)$ for all $n_i$ and $n_j$
+  - Variables $u_(i j)$ for all $n_i$ and $n_j$
 
-  - true if $n_i$ is under $n_j$ in the solution tree
+  - True if $n_i$ is under $n_j$ in the solution tree
 
   - $c_(i j) -> u_(i j)$ for all $n_i$, $n_j$ connected by an edge
 
