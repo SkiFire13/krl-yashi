@@ -27,9 +27,9 @@
 
   - All dots must be connected together
 
-  - No crossing segments
-
   - No cycles
+
+  - No crossing segments
 ][
   #align(center, scale(110%, plot_empty))
 ]
