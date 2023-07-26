@@ -43,6 +43,10 @@
   ))
   place(line(start: (1.5 * unit, 2pt), angle: 120deg, length: 10pt, stroke: stroke))
   place(line(start: (1.5 * unit, 2pt), angle: 60deg, length: 10pt, stroke: stroke))
+  for rot in range(4) {
+    place(line(start: (1.5 * unit, 1 * unit), angle: 45deg + 90deg * rot, length: 30pt, stroke: stroke))
+  }
+  
   place(tree(tree_dots, tree_arrows_solid, "solid"))
   tree(tree_dots, tree_arrows_dotted, "dotted")
 }
