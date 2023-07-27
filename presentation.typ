@@ -45,9 +45,11 @@
 #new-section("Solution")
 
 #slide(title: "Simplifying the problem")[
-  - Let $n_1, ..., n_n$ be the input nodes
+  - Transform into a graph problem
 
-  - We can compute the allowed edges $e_1, ..., e_m$
+  - Let $n_0, ..., n_(n-1)$ be the input nodes
+
+  - We can compute the allowed edges $e_0, ..., e_(m-1)$
   // TODO: Bound on m?
     
   - We can compute the pairs of crossing edges $(e_i, e_j), (e_h, e_k) ...$
@@ -92,13 +94,13 @@
 ]
 
 #slide(title: "SAT Formulation")[
-  - $not c_(1 i)$ for all $n_i$
+  - Let $N_i = { n_j | exists e_k. e_k = (n_i, n_j) or e_k = (n_j, n_i) }$
 
-  - Let $E_i = { e_j | exists n_k. e_j = (n_i, n_k) or e_j = (n_k, n_i) }$
+  - $not c_(0 i)$ for all $n_i$ in $N_0$
 
-  - $display(or.big_(e_j in E_i)) e_j$ for all $n_i$
+  - $display(or.big_(n_j in N_i)) c_(i j)$ for all $n_i$ where $i != 0$
 
-  - $not e_j or not e_k$ for all combinations of $e_j$, $e_k$ in $E_i$
+  - $not c_(i j) or not c_(i k)$ for all combinations of $n_j$, $n_k$ in $N_i$ where $i != 0$
 ]
 
 #slide(title: "Preventing cycles")[
