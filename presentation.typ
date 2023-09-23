@@ -117,20 +117,6 @@
   #tree_cycle
 ]
 
-// #slide(title: "Preventing cycles")[
-//   - Consider a cycle and pick an edge
-
-//   - It connects a child $n_j$ to its parent $n_i$, so $n_j$ is under $n_i$
-
-//   - The next edge must connect to $n_k$ child of $n_j$
-
-//   - Thus $n_k$ is under $n_j$ and by transitivity under $n_i$
-
-//   - And so on, every other node of the cycle is under $n_i$ 
-
-//   - The cycle must close, so $n_i$ is under itself, contradiction
-// ]
-
 #slide(title: "SAT Formulation")[
   - Variables $u_(i j)$ for all $n_i$ and $n_j$
 
@@ -141,6 +127,8 @@
   - $not u_(i i)$ for all $n_i$
 
   - $u_(i j) and u_(j k) -> u_(i k)$ for all $n_i$, $n_j$ and $n_k$
+
+      - Optimization: $c_(i j) and u_(j k) -> u_(i k)$
 ]
 
 #slide(title: "Minimum length solution")[
